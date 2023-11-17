@@ -1,0 +1,22 @@
+/* ScoreDisplay.css */
+.score-strikes-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+  
+  .score-container,
+  .strikes-container {
+    margin: 0 10px;
+    padding: 10px;
+    border-radius: 5px;
+  }
+  
+  .score {
+    color: green;
+  }
+  
+  .strikes {
+    color: red;
+  }
+  

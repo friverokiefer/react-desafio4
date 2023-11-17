@@ -1,0 +1,32 @@
+/* PokemonTable.css */
+.pokemontable-container {
+    overflow-x: auto;
+  }
+  
+  .pokemon-table {
+    width: 100%;
+    margin: 0 auto;
+    border-collapse: collapse;
+  }
+  
+  .pokemon-table th,
+  .pokemon-table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+  }
+  
+  .pokemon-table th {
+    background-color: #f7f7f7;
+    color: #ee1515;
+  }
+  
+  .pokemon-table tr:nth-child(odd) {
+    background-color: #f9f9f9;
+  }
+  
+  .pokemon-image {
+    width: 50px;
+    height: 50px;
+  }
+  
