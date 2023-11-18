@@ -1,14 +1,13 @@
-// App.jsx
 import React, { useState, useEffect } from 'react';
 
-// Importacion de Componentes funcionales
+// Importación de Componentes funcionales
 import PokemonTable from './components/PokemonTable';
 import PokeForm from './components/PokeForm';
 import SearchPokemon from './components/SearchPokemon';
 import ScoreDisplay from './components/ScoreDisplay';
 import SortPokemon from './components/SortPokemon';
 
-// Importacion de Componentes Estructura Web
+// Importación de Componentes Estructura Web
 import Header from './components/Header';
 import Footer from './components/Footer';
 import useMiApi from './components/MiApi';
@@ -18,16 +17,21 @@ import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
+  // Estados de la aplicación
   const [pokemons, setPokemons] = useState([]);
   const [filteredPokemons, setFilteredPokemons] = useState([]);
   const [score, setScore] = useState(0);
   const [strikes, setStrikes] = useState(0);
+
+  // Hook personalizado para la API
   const { fetchPokemonData } = useMiApi();
 
+  // Función para añadir un nuevo Pokémon
   const handleAddPokemon = async (pokemonName) => {
     await fetchPokemonData(pokemonName, setPokemons, setScore, setStrikes);
   };
 
+  // Función para buscar Pokémon
   const handleSearch = (searchTerm) => {
     const lowercasedTerm = searchTerm.toLowerCase();
     const filtered = pokemons.filter(pokemon =>
@@ -39,6 +43,7 @@ function App() {
     setFilteredPokemons(filtered);
   };
 
+  // Funciones para ordenar los Pokémon
   const handleSortAscending = () => {
     const sortedPokemons = [...pokemons].sort((a, b) => a.id - b.id);
     setFilteredPokemons(sortedPokemons);
@@ -49,20 +54,23 @@ function App() {
     setFilteredPokemons(sortedPokemons);
   };
 
+  // Efectos para manejar cambios en el puntaje y strikes
   useEffect(() => {
-    if (score === 10) {
-      alert("Vas muy bien");
-    } else if (score === 25) {
-      alert("¡Sí que sabes de esto!");
-    } else if (score === 50) {
-      alert("¡QUÉ? ¡Eres impresionante!");
-    } else if (score === 100) {
-      alert("¡ERES TODO UN MAESTRO POKÉMON!");
+    // Mensajes basados en el puntaje
+    const scoreMessages = {
+      10: "Vas muy bien",
+      25: "¡Sí que sabes de esto!",
+      50: "¡QUÉ? ¡Eres impresionante!",
+      100: "¡ERES TODO UN MAESTRO POKÉMON!"
+    };
+
+    if (scoreMessages[score]) {
+      alert(scoreMessages[score]);
     }
   }, [score]);
-  
 
   useEffect(() => {
+    // Resetear juego después de 3 strikes
     if (strikes >= 3) {
       alert("Has alcanzado 3 strikes. ¡Inténtalo de nuevo!");
       setStrikes(0);
@@ -76,6 +84,7 @@ function App() {
     setFilteredPokemons(pokemons);
   }, [pokemons]);
 
+  // Estructura JSX del componente App
   return (
     <div className="App">
       <Header />
