@@ -1,4 +1,3 @@
-// PokeForm.jsx
 import React, { useState } from 'react';
 import './PokeForm.css';
 
@@ -18,7 +17,7 @@ function PokeForm({ onAddPokemon }) {
           type="text"
           value={inputValue}
           onChange={(e) => setInputValue(e.target.value)}
-          placeholder="Ingresa un Pokemón"
+          placeholder="Ingresa un Pokémon"
           className="pokeform-input"
         />
         <button type="submit" className="pokeform-button">Add Pokémon</button>

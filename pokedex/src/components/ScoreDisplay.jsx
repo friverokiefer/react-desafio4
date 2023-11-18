@@ -1,4 +1,3 @@
-// ScoreDisplay.jsx
 import React from 'react';
 import './ScoreDisplay.css';
 

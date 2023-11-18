@@ -1,7 +1,13 @@
 .header-container {
-    background-color: #ee1515; /* Rojo de Pokémon */
+    background-color: #ee1515;
     color: white;
-    padding: 10px 0;
+    padding: 1rem 0;
     text-align: center;
+  }
+  
+  .header-container h1 {
+    margin: 0;
+    font-size: 2rem;
+    font-weight: bold;
   }
   
