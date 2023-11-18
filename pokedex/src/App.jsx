@@ -5,7 +5,9 @@ import PokeForm from './components/PokeForm';
 import SearchPokemon from './components/SearchPokemon';
 import ScoreDisplay from './components/ScoreDisplay';
 import SortPokemon from './components/SortPokemon';
-import useMiApi from './components/MiApi'; // Actualiza esta importación si es necesario
+import Header from './components/Header'; // Asegúrate de tener este archivo y su respectivo CSS
+import Footer from './components/Footer'; // Asegúrate de tener este archivo y su respectivo CSS
+import useMiApi from './components/MiApi';
 import './App.css';
 
 function App() {
@@ -62,6 +64,7 @@ function App() {
 
   return (
     <div className="App">
+      <Header /> {/* Encabezado de la aplicación */}
       <div className="game-description">
         <p>Bienvenido al Juego de Pokedex...</p>
       </div>
@@ -70,6 +73,7 @@ function App() {
       <SearchPokemon onSearch={handleSearch} />
       <SortPokemon onSortAscending={handleSortAscending} onSortDescending={handleSortDescending} />
       <PokemonTable pokemons={filteredPokemons} />
+      <Footer /> {/* Pie de página de la aplicación */}
     </div>
   );
 }

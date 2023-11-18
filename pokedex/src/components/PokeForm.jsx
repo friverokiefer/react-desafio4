@@ -18,7 +18,7 @@ function PokeForm({ onAddPokemon }) {
           type="text"
           value={inputValue}
           onChange={(e) => setInputValue(e.target.value)}
-          placeholder="Enter Pokémon Name"
+          placeholder="Ingresa un Pokemón"
           className="pokeform-input"
         />
         <button type="submit" className="pokeform-button">Add Pokémon</button>
