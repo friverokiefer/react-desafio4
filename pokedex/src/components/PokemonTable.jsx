@@ -1,5 +1,4 @@
 import React from 'react';
-import './PokemonTable.css';
 
 function PokemonTable({ pokemons }) {
   return (
@@ -11,7 +10,6 @@ function PokemonTable({ pokemons }) {
             <th>ID</th>
             <th>Nombre</th>
             <th>Habilidades</th>
-            <th>Descripción</th>
           </tr>
         </thead>
         <tbody>
@@ -27,7 +25,6 @@ function PokemonTable({ pokemons }) {
               <td>{pokemon.id}</td>
               <td>{pokemon.name}</td>
               <td>{pokemon.abilities}</td>
-              <td>{pokemon.description}</td>
             </tr>
           ))}
         </tbody>

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import './PokeForm.css';
+import { Form, Button, Container } from 'react-bootstrap';
+
 
 function PokeForm({ onAddPokemon }) {
   const [inputValue, setInputValue] = useState('');
@@ -11,18 +12,19 @@ function PokeForm({ onAddPokemon }) {
   };
 
   return (
-    <div className="pokeform-container">
-      <form onSubmit={handleSubmit}>
-        <input
-          type="text"
-          value={inputValue}
-          onChange={(e) => setInputValue(e.target.value)}
-          placeholder="Ingresa un Pokémon"
-          className="pokeform-input"
-        />
-        <button type="submit" className="pokeform-button">Add Pokémon</button>
-      </form>
-    </div>
+    <Container className="pokeform-container">
+      <Form onSubmit={handleSubmit}>
+        <Form.Group controlId="pokemonInput">
+          <Form.Control
+            type="text"
+            value={inputValue}
+            onChange={(e) => setInputValue(e.target.value)}
+            placeholder="Ingresa un Pokémon"
+          />
+        </Form.Group>
+        <Button variant="primary" type="submit">Add Pokémon</Button>
+      </Form>
+    </Container>
   );
 }
 

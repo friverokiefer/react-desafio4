@@ -1,14 +1,21 @@
 // App.jsx
 import React, { useState, useEffect } from 'react';
+
+// Importacion de Componentes funcionales
 import PokemonTable from './components/PokemonTable';
 import PokeForm from './components/PokeForm';
 import SearchPokemon from './components/SearchPokemon';
 import ScoreDisplay from './components/ScoreDisplay';
 import SortPokemon from './components/SortPokemon';
+
+// Importacion de Componentes Estructura Web
 import Header from './components/Header';
 import Footer from './components/Footer';
 import useMiApi from './components/MiApi';
+
+// Importación de Estilo y Bootstrap
 import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
   const [pokemons, setPokemons] = useState([]);
@@ -43,10 +50,17 @@ function App() {
   };
 
   useEffect(() => {
-    if (score === 100) {
+    if (score === 10) {
+      alert("Vas muy bien");
+    } else if (score === 25) {
+      alert("¡Sí que sabes de esto!");
+    } else if (score === 50) {
+      alert("¡QUÉ? ¡Eres impresionante!");
+    } else if (score === 100) {
       alert("¡ERES TODO UN MAESTRO POKÉMON!");
     }
   }, [score]);
+  
 
   useEffect(() => {
     if (strikes >= 3) {
