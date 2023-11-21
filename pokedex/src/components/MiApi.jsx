@@ -37,8 +37,6 @@ const useMiApi = () => {
       setStrikes(prevStrikes => prevStrikes + 1);
     }
   };
-
-  // Exponer solo la función fetchPokemonData para uso externo
   return { fetchPokemonData };
 };
 
